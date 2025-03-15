@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/app
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/app  # Directly reference db service
+      - DATABASE_URL=${DATABASE_URL} # Directly reference db service
       - SECRET_KEY=${SECRET_KEY}
       - PYTHONPATH=/app  # Ensure Python path is set correctly
     depends_on:
