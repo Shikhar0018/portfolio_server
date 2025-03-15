@@ -13,6 +13,7 @@ from app.schemas.experiences import (
 router = APIRouter()
 
 @router.get("/", response_model=List[Experience])
+
 def get_experiences(
     skip: int = 0,
     limit: int = 100,

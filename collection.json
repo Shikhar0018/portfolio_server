@@ -1,245 +1,330 @@
+
 {
-    "info": {
-      "name": "Design System API Collection",
-      "description": "Postman collection for the Design System API backend.",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  "info": {
+    "name": "Design System API Collection",
+    "description": "Postman collection for the Design System API backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Active Design System",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/design/active",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "design",
+            "active"
+          ]
+        }
+      }
     },
-    "item": [
-      {
-        "name": "Get Active Design System",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/design/active",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "design",
-              "active"
-            ]
-          }
-        }
-      },
-      {
-        "name": "List All Design Systems",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/design/",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "design"
-            ]
-          }
-        }
-      },
-      {
-        "name": "Create Design System",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
+    {
+      "name": "List All Design Systems",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/design/",
+          "host": [
+            "{{baseUrl}}"
           ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"name\": \"Default Theme\",\n  \"colors\": {\n    \"primary\": \"#8B5CF6\",\n    \"secondary\": \"#D946EF\",\n    \"accent\": \"#F97316\",\n    \"background\": \"#FFFFFF\",\n    \"text\": \"#222222\",\n    \"error\": \"#EA384C\",\n    \"success\": \"#10B981\",\n    \"warning\": \"#F59E0B\",\n    \"info\": \"#0EA5E9\"\n  },\n  \"dark_mode\": {\n    \"background\": \"#1A1F2C\",\n    \"text\": \"#FFFFFF\",\n    \"primary\": \"#9B87F5\"\n  },\n  \"typography\": {\n    \"font_family\": \"Inter, sans-serif\",\n    \"heading_font\": \"Inter, sans-serif\",\n    \"base_size\": \"16px\",\n    \"scale_ratio\": 1.25\n  },\n  \"spacing\": {\n    \"base_unit\": \"4px\",\n    \"scale_ratio\": 2\n  },\n  \"border_radius\": {\n    \"small\": \"4px\",\n    \"medium\": \"8px\",\n    \"large\": \"16px\",\n    \"round\": \"50%\"\n  }\n}"
-          },
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/design/",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "design"
-            ]
-          }
-        }
-      },
-      {
-        "name": "Update Design System",
-        "request": {
-          "method": "PUT",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"name\": \"Updated Theme\"\n}"
-          },
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/design/1",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "design",
-              "1"
-            ]
-          }
-        }
-      },
-      {
-        "name": "Activate Design System",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/design/1/activate",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "design",
-              "1",
-              "activate"
-            ]
-          }
-        }
-      },
-      {
-        "name": "List All Data Items",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/data/",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "data"
-            ]
-          }
-        }
-      },
-      {
-        "name": "Search Data Items",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/data/search?q=example",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "data",
-              "search"
-            ],
-            "query": [
-              {
-                "key": "q",
-                "value": "example"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "name": "Create Data Item",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"title\": \"Sample Data\",\n  \"description\": \"This is a sample data item.\",\n  \"content\": { \"key\": \"value\" },\n  \"tags\": [\"sample\", \"data\"]\n}"
-          },
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/data/",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "data"
-            ]
-          }
-        }
-      },
-      {
-        "name": "Update Data Item",
-        "request": {
-          "method": "PUT",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"title\": \"Updated Data Title\"\n}"
-          },
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/data/1",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "data",
-              "1"
-            ]
-          }
-        }
-      },
-      {
-        "name": "Delete Data Item",
-        "request": {
-          "method": "DELETE",
-          "header": [],
-          "url": {
-            "raw": "{{baseUrl}}/api/v1/data/1",
-            "host": [
-              "{{baseUrl}}"
-            ],
-            "path": [
-              "api",
-              "v1",
-              "data",
-              "1"
-            ]
-          }
+          "path": [
+            "api",
+            "v1",
+            "design"
+          ]
         }
       }
-    ],
-    "variable": [
-      {
-        "key": "baseUrl",
-        "value": "http://localhost:8000"
+    },
+    {
+      "name": "Create Design System",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Default Theme\",\n  \"colors\": {\n    \"primary\": \"#8B5CF6\",\n    \"secondary\": \"#D946EF\",\n    \"accent\": \"#F97316\",\n    \"background\": \"#FFFFFF\",\n    \"text\": \"#222222\",\n    \"error\": \"#EA384C\",\n    \"success\": \"#10B981\",\n    \"warning\": \"#F59E0B\",\n    \"info\": \"#0EA5E9\"\n  },\n  \"dark_mode\": {\n    \"background\": \"#1A1F2C\",\n    \"text\": \"#FFFFFF\",\n    \"primary\": \"#9B87F5\"\n  },\n  \"typography\": {\n    \"font_family\": \"Inter, sans-serif\",\n    \"heading_font\": \"Inter, sans-serif\",\n    \"base_size\": \"16px\",\n    \"scale_ratio\": 1.25\n  },\n  \"spacing\": {\n    \"base_unit\": \"4px\",\n    \"scale_ratio\": 2\n  },\n  \"border_radius\": {\n    \"small\": \"4px\",\n    \"medium\": \"8px\",\n    \"large\": \"16px\",\n    \"round\": \"50%\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/design/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "design"
+          ]
+        }
       }
-    ]
-  }
-  
+    },
+    {
+      "name": "Update Design System Color Scheme",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"primary\": \"#FF0000\",\n  \"secondary\": \"#00FF00\",\n  \"accent\": \"#0000FF\",\n  \"background\": \"#FFFFFF\",\n  \"text\": \"#000000\",\n  \"error\": \"#FF0000\",\n  \"success\": \"#00FF00\",\n  \"warning\": \"#FFFF00\",\n  \"info\": \"#0000FF\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/design/color-scheme",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "design",
+            "color-scheme"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List All Projects",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/projects",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "projects"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Project by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/projects/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "projects",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Project",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"1\",\n  \"title\": \"New Project\",\n  \"description\": \"Project description\",\n  \"image\": \"https://example.com/image.png\",\n  \"technologies\": [\"MERN\", \"Python\"],\n  \"link\": \"https://example.com\",\n  \"github\": \"https://github.com/example\",\n  \"appStore\": \"\",\n  \"playStore\": \"\",\n  \"achievements\": [\"Achievement 1\", \"Achievement 2\"]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/projects",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "projects"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Project",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Project Title\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/projects/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "projects",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Project",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/projects/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "projects",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List All Experiences",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/experiences",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "experiences"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Experience by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/experiences/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "experiences",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Experience",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"1\",\n  \"role\": \"Developer\",\n  \"company\": \"Example Corp\",\n  \"period\": \"2021-2022\",\n  \"description\": \"Worked on various projects.\",\n  \"achievements\": [\"Achievement 1\", \"Achievement 2\"],\n  \"projects\": [\"1\"],\n  \"color\": \"#FF0000\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/experiences",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "experiences"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Experience",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"role\": \"Senior Developer\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/experiences/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "experiences",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Experience",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/experiences/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "experiences",
+            "1"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ]
+}
