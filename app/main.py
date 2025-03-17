@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
-from app.api.routes import design, projects, experiences, data
+from app.api.routes import design, projects, experiences, data, portfolio, contact, profile
 from app.core.config import settings
 
 app = FastAPI(
@@ -23,6 +23,10 @@ app.include_router(design.router, prefix=f"{settings.API_V1_STR}/design", tags=[
 app.include_router(projects.router, prefix=f"{settings.API_V1_STR}/projects", tags=["projects"])
 app.include_router(experiences.router, prefix=f"{settings.API_V1_STR}/experiences", tags=["experiences"])
 app.include_router(data.router, prefix=f"{settings.API_V1_STR}/data", tags=["data"])
+app.include_router(portfolio.router, prefix=f"{settings.API_V1_STR}/portfolio", tags=["portfolio"])
+app.include_router(contact.router, prefix=f"{settings.API_V1_STR}/contact", tags=["contact"])
+app.include_router(profile.router, prefix=f"{settings.API_V1_STR}/contact", tags=["profile"])
+
 
 @app.get("/", response_class=HTMLResponse)
 def read_root():

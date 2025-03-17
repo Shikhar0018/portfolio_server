@@ -19,7 +19,7 @@ from app.core.config import settings
 # Import ALL model modules so Alembic can see them
 # (Even if you don't explicitly use them here, the import
 #  ensures their tables are attached to Base.metadata)
-from app.models import data, design, experiences, projects
+from app.models import data, design, experiences, projects, profile
 
 # This is the Alembic Config object
 config = context.config

@@ -7,6 +7,91 @@
   },
   "item": [
     {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "profile"]
+        }
+      }
+    },
+    {
+      "name": "Update Profile",
+      "request": {
+        "method": "PUT",
+        "header": [{
+          "key": "Content-Type",
+          "value": "application/json"
+        }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"description\": \"Full Stack Developer\",\n  \"email\": \"john@example.com\",\n  \"linkedin_url\": \"https://linkedin.com/in/johndoe\",\n  \"github_url\": \"https://github.com/johndoe\",\n  \"professional_background\": \"5+ years experience...\",\n  \"journey\": \"Started coding in 2018...\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "profile"]
+        }
+      }
+    },
+    {
+      "name": "Submit to Google Form",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "entry.2005620554",
+              "value": "John Doe"
+            },
+            {
+              "key": "entry.1045781291",
+              "value": "john@example.com"
+            },
+            {
+              "key": "entry.839337160",
+              "value": "Test message"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://docs.google.com/forms/d/e/1FAIpQLSdsszAEJYAt4d_C-RsAr6Ziv4YALfC3d9GL_KiTsF-dYE3KyA/formResponse",
+          "protocol": "https",
+          "host": ["docs","google","com"],
+          "path": ["forms","d","e","1FAIpQLSdsszAEJYAt4d_C-RsAr6Ziv4YALfC3d9GL_KiTsF-dYE3KyA","formResponse"]
+        }
+      }
+    },
+    {
+      "name": "Get Portfolio Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/portfolio",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "portfolio"
+          ]
+        },
+        "description": "Get complete portfolio data including design systems, projects, and experiences in a single response"
+      }
+    },
+    {
       "name": "Get Active Design System",
       "request": {
         "method": "GET",
