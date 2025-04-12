@@ -8,28 +8,7 @@ services:
     volumes:
       - .:/app
     environment:
-      - DATABASE_URL=${DATABASE_URL} # Directly reference db service
+      - DATABASE_URL=${DATABASE_URL}  # This should reference your Supabase connection string.
       - SECRET_KEY=${SECRET_KEY}
-      - PYTHONPATH=/app  # Ensure Python path is set correctly
-    depends_on:
-      db:
-        condition: service_healthy
+      - PYTHONPATH=/app
     command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
-  db:
-    image: postgres:13
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=app
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d app"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    ports:
-      - "5432:5432"
-
-volumes:
-  postgres_data:
